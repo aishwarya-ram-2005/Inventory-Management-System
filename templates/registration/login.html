@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Sign in{% endblock %}
+{% block auth_content %}
+<div class="login-wrap"><div class="login-card"><div class="login-brand"><div class="brand-mark"><i class="fa-solid fa-cubes-stacked"></i></div><div class="login-word">smart<span class="brand-accent">stock</span></div></div><div class="eyebrow mt-4">INVENTORY CONTROL CENTER</div><h1>Welcome back.</h1><p class="muted">Sign in to manage your inventory with clarity.</p>
+<form method="post" class="mt-4">{% csrf_token %}
+{% if form.errors %}<div class="alert alert-danger">Username or password is incorrect.</div>{% endif %}
+<label class="form-label">Username</label>{{ form.username }}
+<label class="form-label mt-3">Password</label>{{ form.password }}
+<button class="btn btn-primary w-100 mt-4 py-3">Sign in <i class="fa-solid fa-arrow-right ms-2"></i></button>
+</form><small class="muted d-block text-center mt-4">Secure workspace · SmartStock</small></div></div>
+{% endblock %}
